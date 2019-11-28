@@ -1,11 +1,5 @@
-
-# import sqlalchemy
-# from sqlalchemy.ext.automap import automap_base
-# from sqlalchemy.orm import Session
-# from sqlalchemy import create_engine
-
 import json
-from flask import Flask,render_template,jsonify
+from flask import Flask, render_template,jsonify
 import pandas as pd
 # from flask_sqlalchemy import SQLAlchemy
 
