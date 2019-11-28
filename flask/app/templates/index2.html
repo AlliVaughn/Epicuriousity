@@ -1,0 +1,219 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Epicuriousity 2</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+
+    <!-- Site/Custom CSS -->
+    <script type="text/javascript" src="../static/js/app.js"></script>
+
+    <style>
+        .card {
+            /* border: 0; */
+            padding-left: 5px;
+        }
+
+        .section {
+            margin-top: 15px;
+
+        }
+
+        hr {
+            display: block;
+            height: 1px;
+            border: 0;
+            border-top: 2px solid #3d6087;
+            margin: 1em 0;
+            padding: 0;
+        }
+
+        .list-group-item.active {
+            background-color: #3d6087;
+            border-color: #3d6087;
+        }
+
+
+        /* selected btn css */
+        .btn-group-toggle .btn:not(:disabled):not(.disabled).active,
+        .btn-group-toggle .btn:not(:disabled):not(.disabled):active,
+        .show>.btn.dropdown-toggle {
+            color: #fff;
+            background-color: #3d6087;
+            border-color: #3d6087;
+        }
+
+        /* non selected btn css */
+        .btn-group-toggle .btn {
+            color: #fff;
+            background-color: #b7b7b7;
+            border-color: #6c757d;
+        }
+
+        .btn:focus {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row my-auto" style="background-color: #3d6087; color: white;">
+            <div class="col-sm-2">
+                <h2>epicuriousity</h2>
+            </div>
+            <div class="col my-auto">
+                Analysis of over 10k recipes from epicurious.com blah blah blah.....
+            </div>
+        </div>
+
+        <!-- Epifactor -->
+        <div class="section">
+            <div class="row" style="color: #3d6087;">
+                <div class="col-1">
+                    <h5>epifactor</h5>
+                </div>
+                <div class="col my-auto">
+                    explanation of what the epifactor does.......
+                </div>
+            </div>
+            <div class="fluid-container" style="margin-top:10px;">
+                <div class="row justify-content-md-center">
+                    <div class="col-md-2 col-sm-6 col-12">
+                        <div class="card justify-content-md-center">
+                            <iframe class="chart" src="radar" style="height:215px;width:215px;border: 0"></iframe>
+                            <div class="card-body text-center">
+                                0-1 Stars
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-6 col-12">
+                        <div class="card justify-content-md-center">
+                            <iframe class="chart" src="radar2" style="height:215px;width:215px;border: 0">></iframe>
+                            <div class="card-body text-center">
+                                1-2 Stars
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-6 col-12">
+                        <div class="card justify-content-md-center">
+                            <iframe class="chart" src="radar3" style="height:215px;width:215px;border: 0"></iframe>
+                            <div class="card-body text-center">
+                                2-3 Stars
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-6 col-12">
+                        <div class="card h-100">
+                            <iframe class="chart" src="radar4" style="height:215px;width:215px;border: 0"></iframe>
+                            <div class="card-body text-center">
+                                3-4 Stars
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-6 col-12">
+                        <div class="card justify-content-md-center">
+                            <iframe class="chart" src="radar5" style="height:215px;width:215px;border: 0"></iframe>
+                            <div class="card-body text-center">
+                                4-5 Stars
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <!-- Trends & Cloud -->
+        <div class="section">
+            <div class="row" style="color: #3d6087;">
+                <div class="col-1">
+                    <h5>Trends</h5>
+                </div>
+                <div class="col my-auto">
+                    Trending recipe tags blah blah blah
+                </div>
+            </div>
+            <div class="container-fluid row">
+                <div class="col-sm-2 mt-2">
+                    <!-- Trend Items -->
+                    <div class="list-group" id="myList" role="tablist">
+                        <a class="list-group-item list-group-item-action active" data-toggle="list" href="#all"
+                            data-alias='Top 10 Trend Tags' role="tab">All Tags</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#easy"
+                            data-alias='Top 10 Trend Tags Easy' role="tab">Easy</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#glutenfree"
+                            data-alias='Top 10 Trend Tags Gluten Free' role="tab">Gluten Free</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#kidfriendly"
+                            data-alias='Top 10 Trend Tags Kid Friendly' role="tab">Kid Friendly</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#all"
+                            data-alias='Top 10 Trend Tags Vegetarian' role="tab">Vegetarian</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#all"
+                            data-alias='Top 10 Trend Tags Vegan' role="tab">Vegan</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#all"
+                            data-alias='Top 10 Trend Tags Healthy' role="tab">Healthy</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#all"
+                            data-alias='Top 10 Trend Tags Quick' role="tab">Quick</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#all"
+                            data-alias='Top 10 Trend Tags Pescatarian' role="tab">Pescatarian</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#all"
+                            data-alias='Top 10 Trend Tags Kosher' role="tab">Kosher</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#all"
+                            data-alias='Top 10 Trend Tags No Cook' role="tab">No Cook</a>
+                    </div>
+                </div>
+
+                <div class="col-sm-10">
+                    <div class="row">
+                        <div class="col">
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn active">
+                                    <input type="radio" name="options" id="fat" autocomplete="off" checked> Calories vs
+                                    Fat
+                                </label>
+                                <label class="btn ">
+                                    <input type="radio" name="options" id="protein" autocomplete="off"> Calories vs
+                                    Protein
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            area 2
+                        </div>
+                    </div>
+                    <hr />
+                    <h4>Nutritional Scatter</h4>
+                    <div class="container">
+                        <ul>
+                            <li><a onClick="switchView('NutritionalVs', 'Calories vs Fat', '')">Calories vs Fat</a></li>
+                            <li><a onClick="switchView('NutritionalVs', 'Calories vs Protein', '')">Calories vs
+                                    Protein</a></li>
+                        </ul>
+                    </div>
+                    <div id='vizNutritionalVs'></div>
+                    <hr>
+                    <h2>Top 10 Recipe Trends by Tag</h2>
+                    <div id='vizTrends' style='width:100%;'></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
