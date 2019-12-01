@@ -71,7 +71,7 @@ window.onload = function () {
     var vizNutritionalVsURL = 'https://public.tableau.com/views/Epicuriousity-NutritionScatter/CaloriesvsFat?:display_count=y&publish=yes&:origin=viz_share_link';
 
     var trendOptions = {
-        width: '1400px',
+        width: '1150px',
         height: '600px',
         hideToolbar: true,
         hideTabs: true

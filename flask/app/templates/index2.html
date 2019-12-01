@@ -14,43 +14,33 @@
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
 
-        <!-- D3 -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.7.3/d3.min.js"></script>
-            
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
-    
-        <script src="https://d3js.org/d3.v3.min.js"></script>
-    
-        <script src="https://rawgit.com/jasondavies/d3-cloud/master/build/d3.layout.cloud.js"></script>
+    <!-- D3 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.7.3/d3.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+
+    <script src="https://rawgit.com/jasondavies/d3-cloud/master/build/d3.layout.cloud.js"></script>
 
 </head>
 
 <body>
+    <div class="header container-fluid">
+        <span class="h2">EPICUR|iosity</span><span class="header-title-description"> Analysis of over 10k recipes from
+            epicurious.com</span>
+    </div>
     <div class="container-fluid">
-        <div class="row my-auto" style="background-color: #3d6087; color: white;">
-            <div class="col-sm-2">
-                <h2>EPICUR|iosity</h2>
-            </div>
-            <div class="col my-auto">
-                Analysis of over 10k recipes from epicurious.com
-            </div>
-        </div>
-
         <!-- Epifactor -->
         <div class="section">
-            <div class="row" style="color: #3d6087;">
-                <div class="col-1">
-                    <h5>epifactor</h5>
-                </div>
-                <div class="col my-auto">
-                    explanation of what the epifactor does.......
-                </div>
-            </div>
-            <div class="fluid-container" style="margin-top:10px;">
+            <span class="h5">Epifactor</span><span class="title-description">The epifactor is made up of four factors of
+                a recipe: calories, fat, protein and number of ingredients. The epifactor explores how these factore may
+                impact start ratings.</span>
+            <div class="fluid-container mt-3" style="margin-top:10px;">
                 <div class="row justify-content-md-center">
                     <div class="col-md-2 col-sm-6 col-12">
                         <div class="card justify-content-md-center">
-                            <iframe class="chart" src="radar" style="height:200px;width:200px;border: 0"></iframe>
+                            <iframe class="chart" src="radar" style="height:215px;width:215px;border: 0"></iframe>
                             <div class="card-body text-center">
                                 0-1 Stars
                             </div>
@@ -96,107 +86,77 @@
         <div class="section">
             <div class="container-fluid row">
                 <div class="col-sm">
-                    <div class="row" style="color: #3d6087;">
-                        <div class="col-2">
-                            <h5>Nutritional Information</h5>
-                        </div>
-                        <div class="col my-auto">
-                            Compare calories against fat or protein for all recipes
-                        </div>
+                    <span class="h5">Nutritional<br />Information</span><span class="title-description">Compare calories
+                        agains fat or protein for all recipes</span>
+                    <div class="btn-group btn-group-toggle mt-3" id="nutritionalButtons" data-toggle="buttons">
+                        <label class="btn active">
+                            <input type="radio" name="options" id="fat" autocomplete="off" checked
+                                data-alias="Calories vs Fat">
+                            Calories vs
+                            Fat
+                        </label>
+                        <label class="btn ">
+                            <input type="radio" name="options" id="protein" autocomplete="off"
+                                data-alias="Calories vs Protein">
+                            Calories vs
+                            Protein
+                        </label>
                     </div>
-                    <!-- <h5>Nutritional Information</h5> -->
-                    <!-- <hr> -->
-                    <div class="row">
-                        <div class="col">
-                            <div class="btn-group btn-group-toggle" id="nutritionalButtons" data-toggle="buttons">
-                                <label class="btn active">
-                                    <input type="radio" name="options" id="fat" autocomplete="off" checked
-                                        data-alias="Calories vs Fat">
-                                    Calories vs
-                                    Fat
-                                </label>
-                                <label class="btn ">
-                                    <input type="radio" name="options" id="protein" autocomplete="off"
-                                        data-alias="Calories vs Protein">
-                                    Calories vs
-                                    Protein
-                                </label>
-                            </div>
-                            <div id='vizNutritionalVs'></div>
-                        </div>
-                    </div>
+                    <div id='vizNutritionalVs' class="mt-2"></div>
                 </div>
                 <div class="col-sm">
-                    <div class="row" style="color: #3d6087;">
-                        <div class="col-2">
-                            <h5>Word Cloud</h5>
-                        </div>
-                        <div class="col my-auto">
-                            Popular tags for all recipes
-                        </div>
+                    <span class="h5">Word<br />Cloud</span><span class="title-description">Popular tags for all
+                        recipes</span>
+                    <div id="chart" class="mt-3" style="width: auto; height: 500px;">
+                        <!-- Wordcloud is drawn here -->
                     </div>
-                    <!-- <h5>Tag Word Cloud</h5> -->
-                    <!-- <hr> -->
-                    <div class="row">
-                        <div class="col">
-                             <div id="chart" class="mt-10" style="width: auto; height: 500px;">
-                                <!-- Wordcloud is drawn here -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <hr>
-    <!-- Trends -->
-    <div class="section">
-        <div class="row" style="color: #3d6087;">
-            <div class="col-1">
-                <h5>Trends</h5>
-            </div>
-            <div class="col my-auto">
-                Pick a trend to track over time
-            </div>
-        </div>
-        <div class="container-fluid row">
-            <div class="col-sm-2 mt-2">
-                <!-- Trend Items -->
-                <div class="list-group" id="myList" role="tablist">
-                    <a class="list-group-item list-group-item-action active" data-toggle="list" href="#all"
-                        data-alias='Top 10 Trend Tags' role="tab">All Tags</a>
-                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#easy"
-                        data-alias='Top 10 Trend Tags Easy' role="tab">Easy</a>
-                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#glutenfree"
-                        data-alias='Top 10 Trend Tags Gluten Free' role="tab">Gluten Free</a>
-                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#kidfriendly"
-                        data-alias='Top 10 Trend Tags Kid Friendly' role="tab">Kid Friendly</a>
-                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#Vegetarian"
-                        data-alias='Top 10 Trend Tags Vegetarian' role="tab">Vegetarian</a>
-                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#Vegan"
-                        data-alias='Top 10 Trend Tags Vegan' role="tab">Vegan</a>
-                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#Healthy"
-                        data-alias='Top 10 Trend Tags Healthy' role="tab">Healthy</a>
-                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#Quick"
-                        data-alias='Top 10 Trend Tags Quick' role="tab">Quick</a>
-                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#Pescatarian"
-                        data-alias='Top 10 Trend Tags Pescatarian' role="tab">Pescatarian</a>
-                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#Kosher"
-                        data-alias='Top 10 Trend Tags Kosher' role="tab">Kosher</a>
-                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#No Cook"
-                        data-alias='Top 10 Trend Tags No Cook' role="tab">No Cook</a>
-                </div>
-            </div>
 
-            <div class="col-sm-10">
-                
-                <div id='vizTrends' style='width:100%;'></div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <!-- Trends -->
+        <div class="section ml-2">
+            <span class="h5">Trendy Tags</span><span class="title-description">Pick a tag to view how it trends over
+                time</span>
+            <div class="container-fluid row">
+                <div class="col-sm-2 mt-3">
+                    <!-- Trend Items -->
+                    <div class="list-group" id="myList" role="tablist">
+                        <a class="list-group-item list-group-item-action active" data-toggle="list" href="#all"
+                            data-alias='Top 10 Trend Tags' role="tab">All Tags</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#easy"
+                            data-alias='Top 10 Trend Tags Easy' role="tab">Easy</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#glutenfree"
+                            data-alias='Top 10 Trend Tags Gluten Free' role="tab">Gluten Free</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#kidfriendly"
+                            data-alias='Top 10 Trend Tags Kid Friendly' role="tab">Kid Friendly</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#Vegetarian"
+                            data-alias='Top 10 Trend Tags Vegetarian' role="tab">Vegetarian</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#Vegan"
+                            data-alias='Top 10 Trend Tags Vegan' role="tab">Vegan</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#Healthy"
+                            data-alias='Top 10 Trend Tags Healthy' role="tab">Healthy</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#Quick"
+                            data-alias='Top 10 Trend Tags Quick' role="tab">Quick</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#Pescatarian"
+                            data-alias='Top 10 Trend Tags Pescatarian' role="tab">Pescatarian</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#Kosher"
+                            data-alias='Top 10 Trend Tags Kosher' role="tab">Kosher</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#No Cook"
+                            data-alias='Top 10 Trend Tags No Cook' role="tab">No Cook</a>
+                    </div>
+                </div>
+
+                <div class="col-sm-10">
+
+                    <div id='vizTrends' style='width:100%;'></div>
+                </div>
             </div>
         </div>
     </div>
-    </div>
-    <hr>
     <footer>
-        <div class="container-fluid">
+        <div class="container-fluid header mt-3">
             <div id="section">
                 <div class="row-fluid">
                     <p class="copyright"> &copy 2019 Sarah Cross | Amy Koldeway | Alli Vaughn </p>
@@ -286,17 +246,17 @@
         }
 
     </script>
-    
-                <!-- Tableau API & Javascript -->
-                <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
 
-                
-            
-            
-            
-                <!-- Site/Custom CSS -->
-                <script type="text/javascript" src="../static/js/app.js"></script>
-                <link rel="stylesheet" href="../static/css/style.css">
+    <!-- Tableau API & Javascript -->
+    <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+
+
+
+
+
+    <!-- Site/Custom CSS -->
+    <script type="text/javascript" src="../static/js/app.js"></script>
+    <link rel="stylesheet" href="../static/css/style.css">
 
 
 </html>
