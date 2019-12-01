@@ -1,0 +1,45 @@
+
+        .card {
+            /* border: 0; */
+            padding-left: 5px;
+        }
+
+        .section {
+            margin-top: 15px;
+
+        }
+
+        hr {
+            display: block;
+            height: 1px;
+            border: 0;
+            border-top: 2px solid #3d6087;
+            margin: 1em 0;
+            padding: 0;
+        }
+
+        .list-group-item.active {
+            background-color: #3d6087;
+            border-color: #3d6087;
+        }
+
+
+        /* selected btn css */
+        .btn-group-toggle .btn:not(:disabled):not(.disabled).active,
+        .btn-group-toggle .btn:not(:disabled):not(.disabled):active,
+        .show>.btn.dropdown-toggle {
+            color: #fff;
+            background-color: #3d6087;
+            border-color: #3d6087;
+        }
+
+        /* non selected btn css */
+        .btn-group-toggle .btn {
+            color: #fff;
+            background-color: #b7b7b7;
+            border-color: #6c757d;
+        }
+
+        .btn:focus {
+            outline: none;
+        }
